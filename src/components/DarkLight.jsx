@@ -10,7 +10,7 @@ const DarkLightToggle = ({}) => {
     <button
       onClick={toggleTheme}
       className={`
-        relative inline-flex items-center h-8 w-12  sm:h-8 sm:w-16
+        relative inline-flex  items-center h-8 w-12  sm:h-8 sm:w-16
         rounded-full transition-colors duration-200 ease-in-out
         ${isDarkMode ? 'bg-indigo-600' : 'bg-gray-200'}
         focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500
@@ -42,7 +42,7 @@ const DarkLightToggle = ({}) => {
           transform rounded-full bg-white shadow-lg 
           ring-0 transition-transform duration-200 ease-in-out
           ${isDarkMode 
-            ? 'sm:translate-x-9 translate-x-6' 
+            ? 'sm:translate-x-9 translate-x-1.5' 
             : 'sm:translate-x-1 translate-x-1'
           }
           ${isDarkMode ? 'shadow-purple-400/50' : 'shadow-sky-300/50'}
@@ -51,7 +51,7 @@ const DarkLightToggle = ({}) => {
         
         <div className="absolute inset-0 flex items-center justify-center">
           {isDarkMode ? (
-            <Moon size={12} className="text-purple-600 sm:w-3 sm:h-3 w-2.5 h-2.5" />
+            <Moon size={12} className="text-purple-600 sm:w-3 sm:h-3  w-2.5 h-2.5" />
           ) : (
             <Sun size={12} className="text-amber-500  sm:w-3 sm:h-3 w-2.5 h-2.5" />
           )}

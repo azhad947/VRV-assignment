@@ -1,6 +1,6 @@
 const UserTable = ({ users, onEdit, onDelete }) => {
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-scroll">
       <table className="min-w-full bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow-md rounded">
         <thead>
           <tr>
@@ -29,10 +29,10 @@ const UserTable = ({ users, onEdit, onDelete }) => {
               <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">{user.roles.join(', ')}</td>
               <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">{user.status}</td>
               <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex-col justify-between sm:flex-row sm:justify-between">
-                <button className="bg-blue-500 dark:bg-blue-600 text-white py-1 px-3 rounded mr-2" onClick={() => onEdit(user)}>
+                <button className="bg-blue-500 dark:bg-blue-600 text-white px-2 mb-1 sm:py-1 sm:px-3 rounded mr-2" onClick={() => onEdit(user)}>
                   Edit
                 </button>
-                <button className="bg-red-500 dark:bg-red-600 text-white py-1 px-3 rounded" onClick={()=> onDelete(user.id)}>
+                <button className="bg-red-500 dark:bg-red-600 text-white px-2  sm:py-1 sm:px-3 rounded" onClick={()=> onDelete(user.id)}>
                   Delete
                 </button>
               </td>
