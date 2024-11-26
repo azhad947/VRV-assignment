@@ -1,6 +1,6 @@
 const UserTable = ({ users, onEdit, onDelete }) => {
   return (
-    <div className="overflow-x-scroll">
+    <div className="overflow-x-scroll sm:overflow-x-auto">
       <table className="min-w-full bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 shadow-md rounded">
         <thead>
           <tr>
@@ -23,13 +23,13 @@ const UserTable = ({ users, onEdit, onDelete }) => {
         </thead>
         <tbody>
           {users.map((user) => (
-            <tr key={user.id} className="hover:bg-gray-100 dark:hover:bg-gray-700">
-              <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">{user.name}</td>
-              <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">{user.email}</td>
-              <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">{user.roles.join(', ')}</td>
-              <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">{user.status}</td>
-              <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex-col justify-between sm:flex-row sm:justify-between">
-                <button className="bg-blue-500 dark:bg-blue-600 text-white px-2 mb-1 sm:py-1 sm:px-3 rounded mr-2" onClick={() => onEdit(user)}>
+            <tr key={user.id} className="hover:bg-gray-100 dark:hover:bg-gray-700 ">
+              <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 text-center">{user.name}</td>
+              <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 text-center">{user.email}</td>
+              <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 text-center">{user.roles.join(', ')}</td>
+              <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 text-center">{user.status}</td>
+              <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex-col justify-between sm:flex-row sm:justify-between text-center">
+                <button className="bg-blue-500 dark:bg-blue-600 text-white px-2 mb-1 sm:py-1 sm:px-3 rounded mr-2" onClick={() => onEdit(user.id)}>
                   Edit
                 </button>
                 <button className="bg-red-500 dark:bg-red-600 text-white px-2  sm:py-1 sm:px-3 rounded" onClick={()=> onDelete(user.id)}>

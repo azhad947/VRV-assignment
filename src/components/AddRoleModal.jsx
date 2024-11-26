@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
+import toast from 'react-hot-toast';
+import { Loader } from 'lucide-react';
 
 const AddRoleModal = ({ isOpen, onClose, onSave, roleToEdit }) => {
   const [name, setName] = useState(roleToEdit?.name || '');
@@ -10,7 +12,8 @@ const AddRoleModal = ({ isOpen, onClose, onSave, roleToEdit }) => {
     onSave(roleData);
     onClose();
   };
-
+ 
+  const isFormValid = name && permissions.length > 0 && !permissions.includes("");
   return (
     <Modal isOpen={isOpen} onClose={onClose} title={roleToEdit ? 'Edit Role' : 'Add Role'}>
       <div className="flex flex-col space-y-4">
@@ -19,21 +22,29 @@ const AddRoleModal = ({ isOpen, onClose, onSave, roleToEdit }) => {
           placeholder="Role Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="border px-3 py-2 rounded"
+          className="border px-3 py-2 rounded dark:bg-black"
         />
         <input
           type="text"
           placeholder="Permissions (comma separated)"
-          value={permissions.join(', ')}
+          value={permissions.join(',')}
           onChange={(e) => setPermissions(e.target.value.split(',').map((perm) => perm.trim()))}
-          className="border px-3 py-2 rounded"
+          className="border px-3 py-2 rounded dark:bg-black"
         />
-        <button
+              {  !isFormValid ?  <button
+          onClick={()=> toast.error("Fill All The Fields")}
+          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 "
+
+        >
+          <Loader className=' animate-spin mx-auto ' size={24} />
+        </button>
+          : <button
           onClick={handleSubmit}
-          className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+          className={`bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 `}
+
         >
           Save
-        </button>
+        </button>}
       </div>
     </Modal>
   );
