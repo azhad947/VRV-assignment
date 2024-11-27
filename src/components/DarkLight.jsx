@@ -13,7 +13,7 @@ const DarkLightToggle = () => {
                     relative inline-flex items-center justify-between
                     w-16 h-8 xs:w-18 sm:w-20 
                     rounded-full p-1
-                    transition-all duration-300 ease-in-out
+                    transition-colors duration-200 ease-in-out
                     focus:outline-none focus:ring-2 focus:ring-offset-2
                     ${isDarkMode 
                         ? 'bg-indigo-600 focus:ring-indigo-500' 
@@ -26,7 +26,7 @@ const DarkLightToggle = () => {
                 <span 
                     className={`
                         absolute left-1.5 top-1/2 -translate-y-1/2
-                        transition-all duration-300
+                        transition-opacity duration-200
                         ${isDarkMode 
                             ? 'opacity-0 scale-75' 
                             : 'opacity-100 scale-100 text-yellow-500'
@@ -40,7 +40,7 @@ const DarkLightToggle = () => {
                 <span 
                     className={`
                         absolute right-1.5 top-1/2 -translate-y-1/2
-                        transition-all duration-300
+                         transition-opacity duration-200
                         ${isDarkMode 
                             ? 'opacity-100 scale-100 text-white' 
                             : 'opacity-0 scale-75'
