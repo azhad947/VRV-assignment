@@ -146,7 +146,7 @@ const App = () => {
   return (
     <div className="p-6 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition">
       <div className="flex justify-between">
-        <h1 className="text-2xl font-bold mb-6">
+        <h1 className="sm:text-2xl text-xl font-bold mb-6">
           Role-Based Access Control (RBAC){" "}
         </h1>
 

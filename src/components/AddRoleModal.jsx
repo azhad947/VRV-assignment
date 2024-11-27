@@ -33,10 +33,10 @@ const AddRoleModal = ({ isOpen, onClose, onSave, roleToEdit }) => {
         />
               {  !isFormValid ?  <button
           onClick={()=> toast.error("Fill All The Fields")}
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 "
+          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-300 "
 
         >
-          <Loader className=' animate-spin mx-auto ' size={24} />
+          save
         </button>
           : <button
           onClick={handleSubmit}

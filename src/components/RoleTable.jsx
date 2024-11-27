@@ -20,10 +20,10 @@ const RoleTable = ({ roles, onEdit, onDelete }) => {
         <tbody>
           {roles.map((role) => (
             <tr key={role.id} className="hover:bg-gray-100  dark:hover:bg-gray-700">
-              <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 text-center">
+              <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 text-left">
                 {role.name}
               </td>
-              <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 text-center">
+              <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 text-left">
                 {role.permissions.join(", ")}
               </td>
               <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 text-center">
